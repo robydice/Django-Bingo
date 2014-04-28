@@ -1,7 +1,9 @@
-from django.conf.urls.defaults import *
-from django.conf import settings
+# from django.conf.urls.defaults import *
+# from django.conf import settings
+#
+# from views import *
 
-from views import *
+from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('dashboard.views',
                        url(r'^$', 'index'),
