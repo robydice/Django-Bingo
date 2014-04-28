@@ -28,7 +28,7 @@ WARNING: This software is mostly a dump of ideas and code. It is neither neat no
     (r'^dashboard/', include('dashboard.urls')),
     (r'^accounts/login/$', 'django.contrib.auth.views.login'),
     (r'^accounts/logout/$', 'django.contrib.auth.views.logout_then_login'),
-    (r'^accounts/profile/$', 'django.views.generic.simple.redirect_to', {'url': '/'}),
+    (r'^accounts/profile/$', RedirectView.as_view(url='/')),
 
  * You can now access the Django Bingo dashboard:
 
