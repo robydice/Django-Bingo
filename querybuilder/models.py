@@ -1,9 +1,6 @@
 from django.db import models
 from django.conf import settings
-from django.db.models import Avg, Min, Max, Sum, Count # Dashboard designer can use these for a data selection
-from django.utils import simplejson
 
-import sys
 import datetime
 
 global_max_length = 200
