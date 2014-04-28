@@ -63,14 +63,15 @@ class AddSelectionStep2Form(forms.ModelForm):
         model = DataSelection
         fields = ('selected_model', 'auto_add_columns',)
 
-from django.contrib.formtools.wizard import FormWizard
+# from django.contrib.formtools.wizard import FormWizard
+from django.contrib.formtools.wizard.views import SessionWizardView
 
-class AddSelectionWizard(FormWizard):
+class AddSelectionWizard(SessionWizardView):
     def get_template(self, step):
         return 'querybuilder/add_selection.html'
     
     def process_step(self, request, form, step):
-        if form.is_valid() and step == 0: # Process the application, add all models found
+        if form.is_valid() and step == 0:  # Process the application, add all models found
             add_models_from_app(form.cleaned_data['app_name'])
 
     def done(self, request, form_list):
