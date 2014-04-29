@@ -1,2 +1,4 @@
 *.pyc
 djangobingo.sqlite
+venv/
+.idea/
