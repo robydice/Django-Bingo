@@ -33,7 +33,7 @@
 
 <div id='edit_element_view'>
 <ul>
-<li>JSON: <a href='{% url json_data element.id %}'>{{ element }}</a></li>
+<li>JSON: <a href='{% url 'json_data' element.id %}'>{{ element }}</a></li>
 <li><a href='#' onclick='show_element_{{ element.id }}(); return false;'>Refresh element</a>
 </ul>
 {% with element as elm %}
@@ -45,7 +45,7 @@
 <div id='edit_table_columns'>
  <ul>
   {% for tablecolumn in element.get_child.column_elements.all %}
-  <li><a href='{% url edit_tablecolumn element.id,tablecolumn.id %}'>{{ tablecolumn }}</a> <a href='{% url delete_tablecolumn tablecolumn.id %}'>(delete)</a></li>
+  <li><a href='{% url 'edit_tablecolumn' element.id tablecolumn.id %}'>{{ tablecolumn }}</a> <a href='{% url delete_tablecolumn tablecolumn.id %}'>(delete)</a></li>
   {% endfor %}
  </ul>
  <a href='{% url add_tablecolumn element.id %}'>Add table column</a>
