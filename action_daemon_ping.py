@@ -1,8 +1,8 @@
 #!/usr/bin/python
+import os
 
-from django.core.management import setup_environ
-import settings
-setup_environ(settings)
+os.environ.setdefault("DJANGO_SETTINGS_MODULE", "settings")
+
 import time
 import ping.ping as pinger
 import logging
